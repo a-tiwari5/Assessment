@@ -39,7 +39,7 @@ const PhotoGrid = ({ customerName }) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://pixabay.com/api/?key=37997811-e59dfa67c8e060b33cfd2f712&q=${randomWord}&per_page=9`,
+          `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${randomWord}&per_page=9`,
           {
             headers: {
               Accept: "application/json",
