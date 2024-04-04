@@ -1,7 +1,7 @@
 const generateCustomers = () => {
   const customers = [];
 
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 1000; i++) {
     const newCustomer = {
       id: i,
       name: `Customer ${i.toString().padStart(2, "0")}`,
