@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CustomerList from "./components/CustomerList";
+import CustomerDetails from "./components/CustomerDetails";
+import "./App.css";
+import customers from "./components/CustomerData"; 
 
-function App() {
+const App = () => {
+  const [selectedCustomerId, setSelectedCustomerId] = useState(customers[0].id);
+
+  const selectedCustomer = customers.find(
+    (customer) => customer.id === selectedCustomerId
+  );
+
+  const onSelectCustomer = (customerId) => {
+    setSelectedCustomerId(customerId);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <CustomerList
+        customers={customers}
+        selectedCustomerId={selectedCustomerId}
+        onSelectCustomer={onSelectCustomer}
+      />
+      <CustomerDetails customer={selectedCustomer} />
     </div>
   );
-}
+};
 
 export default App;

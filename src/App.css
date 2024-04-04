@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  /* position: fixed; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customer-list {
+  width: 280px;
+ position: sticky;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.customer-card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.customer-card:hover {
+  background-color: #f0f0f0;
+}
+
+.customer-card.selected {
+  background-color: #dfecf8;
+}
+
+.customer-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align content to the left */
+  background-color: #f9f9f9;
+  overflow-y: auto; 
+  max-height: calc(100vh - 40px);
+}
+
+.photo-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.customer-list p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.customer-list {
+  width: 250px;
+  overflow-y: auto; 
+  max-height: calc(100vh - 40px);
+}
+
+
+.customer-content {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+ 
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
