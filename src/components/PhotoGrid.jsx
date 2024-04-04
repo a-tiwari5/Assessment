@@ -67,7 +67,7 @@ const PhotoGrid = ({ customerName }) => {
     const intervalId = setInterval(generateRandomWord, 10000);
 
     return () => clearInterval(intervalId);
-  }, [customerName, randomWord, words]);
+  }, [customerName, randomWord]);
 
   return (
     <div className="photo-grid">
